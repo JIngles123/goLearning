@@ -11,16 +11,16 @@ import (
 */
 
 func main() {
-	stream:=pump_146()
+	stream := pump_146()
 	go suck_146(stream)
 	time.Sleep(1e9)
 }
 
 func pump_146() chan int {
-	ch:=make(chan int)
+	ch := make(chan int)
 	go func() {
-		for i:=0; ;i++ {
-			ch<-i
+		for i := 0; ; i++ {
+			ch <- i
 		}
 	}()
 	return ch
